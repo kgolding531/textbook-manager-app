@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- https://www.vecteezy.com/vector-art/626702-education-book-logo-template-vector-illustration -->
+    <background android:drawable="@drawable/appimage" />
+    <foreground android:drawable="@drawable/appimage" />
+    <monochrome android:drawable="@drawable/appimage" />
+</adaptive-icon>

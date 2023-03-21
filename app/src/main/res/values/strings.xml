@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Textbook Manager App</string>
+    <string name="addBtnText">Add Textbook</string>
+    <string name="etISBNText">Enter ISBN</string>
+    <string name="etTitleText">Enter Title</string>
+    <string name="etAuthorText">Enter Author</string>
+    <string name="etCourseText">Enter Course</string>
+    <string name="tvISBNText">ISBN</string>
+    <string name="tvTitleText">Title</string>
+    <string name="tvAuthorText">Author</string>
+    <string name="tvCourseText">Course</string>
+    <string name="itemSearch">Search</string>
+    <string name="itemSort">Sort</string>
+    <string name="itemAddTextbook">Add Textbook</string>
+    <string name="addBtn_text">Update</string>
+    <string name="share_button_cntdesc">share_button</string>
+    <string name="copy_button_cntdesc">copy_button</string>
+    <string name="edit_button_cntdesc">edit_button</string>
+    <string name="delete_button_cntdesc">delete_button</string>
+</resources>
