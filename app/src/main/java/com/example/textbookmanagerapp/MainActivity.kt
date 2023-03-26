@@ -99,7 +99,7 @@ class MainActivity : AppCompatActivity() {
         if (mActionBar != null) {
 
             //set to actionbar as subtitle of actionbar
-            mActionBar.subtitle = "You have $total textbook(s) in list..."
+            mActionBar.subtitle = "There are $total textbook(s) in list."
         }
     }
 
@@ -384,7 +384,7 @@ class MainActivity : AppCompatActivity() {
                 val course = tvCourse.text.toString()
 
                 //concatenate
-                val s = ISBN + "\n" + title + "\n" + author + "\n" + course
+                val s = "ISBN: $ISBN \nTitle: $title \nAuthor: $author \nCourse: $course"
                 val cb = getSystemService(CLIPBOARD_SERVICE) as ClipboardManager
                 cb.text = s // add to clipboard
                 Toast.makeText(this@MainActivity, "Copied", Toast.LENGTH_SHORT).show()
@@ -406,7 +406,7 @@ class MainActivity : AppCompatActivity() {
                 val course = tvCourse.text.toString()
 
                 //concatenate
-                val s = ISBN + "\n" + title + "\n" + author + "\n" + course
+                val s = "ISBN: $ISBN \nTitle: $title \nAuthor: $author \nCourse: $course"
 
                 //share intent
                 val shareIntent = Intent()
@@ -415,7 +415,6 @@ class MainActivity : AppCompatActivity() {
                 shareIntent.putExtra(Intent.EXTRA_TEXT, s)
                 startActivity(Intent.createChooser(shareIntent, s))
             }
-
             return myView
         }
 

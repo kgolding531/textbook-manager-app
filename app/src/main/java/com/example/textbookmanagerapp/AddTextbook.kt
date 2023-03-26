@@ -38,7 +38,7 @@ class AddTextbook: AppCompatActivity() {
 
                 // change button text
                 addBtn.text = getString(R.string.addBtn_text)
-                etISBN.setText(bundle.getString("isbn"))
+                etISBN.setText(bundle.getString("ISBN")) // ensure the name here is the same as from the previous activity (goToUpdateFun() in Main activity)
                 etTitle.setText(bundle.getString("title"))
                 etAuthor.setText(bundle.getString("author"))
                 etCourse.setText(bundle.getString("course"))
@@ -68,6 +68,8 @@ class AddTextbook: AppCompatActivity() {
         val author = etAuthor.text.toString()
         val course = etCourse.text.toString()
 
+        trimText(isbn, title, author, course)
+
         if (id == 0) {
             val ID = dbManager.insert(values)
 
@@ -75,6 +77,7 @@ class AddTextbook: AppCompatActivity() {
 
                 if (validateFields(isbn, title, author, course)) {
                     Toast.makeText(this, "Textbook added", Toast.LENGTH_SHORT).show()
+                    trimText(isbn, title, author, course)
                     finish()
                 }
                     else {
@@ -91,6 +94,7 @@ class AddTextbook: AppCompatActivity() {
 
                 if (ID > 0) {
                     Toast.makeText(this, "Textbook updated", Toast.LENGTH_SHORT).show()
+                    trimText(isbn, title, author, course)
                     finish()
                 }
                     else {
@@ -99,14 +103,15 @@ class AddTextbook: AppCompatActivity() {
         }
     }
 
-    // TODO: TRIM TEXT FOR SORTING PURPOSES, SEE WHY ISBN FIELD DOESNT RETAIN INFO WHEN UPDATING IT
-    //  ALLOW PASTING AND SHARING TO SPECIFY THE ISBN, TITLE, ETC... AND SEE WHY UPDATING/EDITING DOESNT
-    //  BIG ISSUE: THE APP JUST STOPPED WORKING ALL OF A SUDDEN... NOTHING IS POPPING UP!! :sob:
-    //  WORK ALL THE TIME. CHECK OUT THE SEARCHING PART OF THE APP TOO
-
-
     private fun validateFields(isbn: String, title: String, author: String, course: String): Boolean {
         return !isbn.isNullOrEmpty() && !title.isNullOrEmpty() && !author.isNullOrEmpty()
                 && !course.isNullOrEmpty()
+    }
+
+    private fun trimText(isbn: String, title: String, author: String, course: String) {
+        isbn.trim()
+        title.trim()
+        author.trim()
+        course.trim()
     }
 }
